@@ -3,6 +3,12 @@ package classes;
 import java.util.Map;
 
 public interface Empresa {
+	
+	private Conjunto<Especialista> listaEspecialistas;
+	private Conjunto<Cliente> listaClientes;
+	private Diccionario<Long,Servicio> listasServicios;
+	
+	
 	/**
 	* Registra un nuevo cliente en el sistema dado su:
 	* - dni,
