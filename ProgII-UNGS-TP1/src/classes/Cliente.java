@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-	private Long dni;
+	private int dni;
 	private String nombre;
 	private String numeroContacto;
 	private ArrayList<Servicio> listaServiciosPendientes;
@@ -13,7 +13,7 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(Long dni, String nombre, String numeroContacto) {
+	public Cliente(int dni, String nombre, String numeroContacto) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
@@ -21,11 +21,15 @@ public class Cliente {
 	}
 	
 	public void addServicioPendiente(Servicio servicio) {
-		
+		if(!servicio.finalizado()) {
+			listaServiciosPendientes.add(servicio);
+		}
 	}
 	
 	public void removeServicioPendiente(Servicio servicio) {
-		
+		if(servicio.finalizado()) {
+			listaServiciosPendientes.remove(servicio);
+		}
 	}
 	
 	

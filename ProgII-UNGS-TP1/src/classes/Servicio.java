@@ -22,9 +22,7 @@ public abstract class Servicio {
 		this.cliente = cliente;
 	}
 	
-	public double calcularImporteTotal() {
-		return 0;
-	}
+	public abstract double calcularImporteTotal();
 	
 	public void incrementarCantidadServiciosFinalizados() {
 		
@@ -35,7 +33,11 @@ public abstract class Servicio {
 	}
 	
 	public boolean finalizado() {
-		return false;
+		return this.finalizado();
+	}
+	
+	public void finalizarServicio() {
+		this.finalizado = true;
 	}
 	
 }

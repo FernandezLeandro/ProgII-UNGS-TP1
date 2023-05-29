@@ -3,16 +3,20 @@ package classes;
 import java.util.Map;
 
 public class EmpresaDeServicios implements Empresa{
+	
+	private Conjunto<Especialista> listaEspecialistas;
+	private Conjunto<Cliente> listaClientes;
+	private Diccionario<Long,Servicio> listasServicios;
 
 	@Override
 	public void registrarCliente(int dni, String nombre, String telefono) {
-		// TODO Auto-generated method stub
+		listaClientes.agregar(new Cliente(dni, nombre, telefono));
 		
 	}
 
 	@Override
 	public void registrarEspecialista(int nroEspecialista, String nombre, String telefono, String especialidad) {
-		// TODO Auto-generated method stub
+		listaEspecialistas.agregar(new Especialista(nroEspecialista,nombre,telefono,especialidad));
 		
 	}
 

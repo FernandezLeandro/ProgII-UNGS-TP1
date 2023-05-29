@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Especialista {
 
-	private Long idEspecialista;
+	private int idEspecialista;
 	private String nombre;
-	private Long telefono;
+	private String telefono;
 	private String especialidad;
 	private ArrayList<Servicio> historialServiciosRealizados;
 	
@@ -14,7 +14,7 @@ public class Especialista {
 		
 	}
 
-	public Especialista(Long idEspecialista, String nombre, Long telefono, String especialidad) {
+	public Especialista(int idEspecialista, String nombre, String telefono, String especialidad) {
 		this.idEspecialista = idEspecialista;
 		this.nombre = nombre;
 		this.telefono = telefono;
@@ -26,7 +26,7 @@ public class Especialista {
 	}
 
 	public void addServicioHistorial(Servicio servicio) {
-		
+		historialServiciosRealizados.add(servicio);
 	}
 	
 

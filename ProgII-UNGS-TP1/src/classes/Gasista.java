@@ -25,8 +25,15 @@ public class Gasista extends Servicio {
 		this.cantidadServicioFinalizados = cantidadServicioFinalizados;
 	}
 	
+//	public double calcularImporteTotal(Integer cantidadArtefactos) {
+//		return 0;
+//	}
+
+	@Override
 	public double calcularImporteTotal(Integer cantidadArtefactos) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	
 }
