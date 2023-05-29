@@ -6,6 +6,7 @@ public class Electricidad extends Servicio {
 	private int cantidadHoras;
 	public int cantidadServiciosFinalizados;
 	
+	
 	public Electricidad() {
 		
 	}
@@ -18,8 +19,29 @@ public class Electricidad extends Servicio {
 		this.cantidadServiciosFinalizados = cantidadServiciosFinalizados;
 	}
 	
-	public double calcularImporteTotal(Integer cantidadHoras) {
-		return 0;
+
+	@Override
+	public double calcularImporteTotal() {
+		return cantidadHoras * valorPorHora;
+	}
+
+	@Override
+	public void cambiarEspecialista(Especialista nuevoEspecialista) {
+		this.setEspecialista(nuevoEspecialista);
+		
+	}
+
+	@Override
+	public boolean finalizado() {
+		return this.finalizado();
+	}
+
+	@Override
+	public void finalizarServicio() {
+		if(!this.isFinalizado()) {
+			this.setFinalizado(true);
+			incrementarCantidadServiciosFinalizados();
+		}
 	}
 	
 }

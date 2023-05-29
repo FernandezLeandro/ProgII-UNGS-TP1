@@ -17,9 +17,38 @@ public class Pintura extends Servicio {
 		this.superficieEnM2 = superficieEnM2;
 		this.cantidadServiciosFinalizados = cantidadServiciosFinalizados;
 	}
-	
-	public double calcularImporteTotal(Integer superficieEnM2) {
-		return 0;
+
+	@Override
+	public double calcularImporteTotal() {
+		return costePorM2 * superficieEnM2;
 	}
+
+	@Override
+	public void cambiarEspecialista(Especialista nuevoEspecialista) {
+		this.setEspecialista(nuevoEspecialista);
+		
+	}
+
+	@Override
+	public boolean finalizado() {
+		return this.finalizado();
+	}
+
+	@Override
+	public void finalizarServicio() {
+		if(!this.isFinalizado()) {
+			this.setFinalizado(true);
+			incrementarCantidadServiciosFinalizados();
+		}
+	}
+
+	public double getCostePorM2() {
+		return costePorM2;
+	}
+
+	public double getSuperficieEnM2() {
+		return superficieEnM2;
+	}
+	
 	
 }

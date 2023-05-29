@@ -8,6 +8,7 @@ public abstract class Servicio {
 	private String domicilio;
 	private Cliente cliente;
 	private Boolean finalizado;
+	private int cantidadServiciosFinalizados = 0;
 	
 	public Servicio() {
 		
@@ -25,19 +26,27 @@ public abstract class Servicio {
 	public abstract double calcularImporteTotal();
 	
 	public void incrementarCantidadServiciosFinalizados() {
-		
+		cantidadServiciosFinalizados++;
 	}
 	
-	public void cambiarEspecialista(Especialista nuevoEspecialista) {
-		
+	public abstract void cambiarEspecialista(Especialista nuevoEspecialista);
+	
+	public abstract boolean finalizado();
+	
+	public abstract void finalizarServicio();
+	
+
+	public Boolean isFinalizado() {
+		return finalizado;
+	}
+
+
+	public void setFinalizado(Boolean finalizado) {
+		this.finalizado = finalizado;
 	}
 	
-	public boolean finalizado() {
-		return this.finalizado();
-	}
-	
-	public void finalizarServicio() {
-		this.finalizado = true;
+	public void setEspecialista(Especialista especialista) {
+		this.especialista = especialista;
 	}
 	
 }
