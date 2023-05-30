@@ -7,6 +7,12 @@ public class EmpresaDeServicios implements Empresa{
 	private Conjunto<Especialista> listaEspecialistas;
 	private Conjunto<Cliente> listaClientes;
 	private Diccionario<Long,Servicio> listasServicios;
+	
+	public EmpresaDeServicios () {
+		this.listaClientes = new Conjunto<Cliente>();
+		this.listaEspecialistas = new Conjunto <Especialista>();
+		this.listasServicios = new Diccionario<Long,Servicio>();
+	}
 
 	@Override
 	public void registrarCliente(int dni, String nombre, String telefono) {
