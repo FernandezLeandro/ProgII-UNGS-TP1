@@ -1,7 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
-
+ 
 public class Conjunto<T> {
 
 	private ArrayList<T> conjunto;

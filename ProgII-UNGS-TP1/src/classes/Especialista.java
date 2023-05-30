@@ -28,6 +28,44 @@ public class Especialista {
 	public void addServicioHistorial(Servicio servicio) {
 		historialServiciosRealizados.add(servicio);
 	}
+
+	public int getIdEspecialista() {
+		return idEspecialista;
+	}
+
+	public void setIdEspecialista(int idEspecialista) {
+		this.idEspecialista = idEspecialista;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public void setHistorialServiciosRealizados(ArrayList<Servicio> historialServiciosRealizados) {
+		this.historialServiciosRealizados = historialServiciosRealizados;
+	}
+	
+	
 	
 
 	

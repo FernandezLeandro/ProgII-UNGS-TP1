@@ -1,16 +1,18 @@
 package classes;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Map;
 
 public class EmpresaDeServicios implements Empresa{
 	
-	private Conjunto<Especialista> listaEspecialistas;
+	private ArrayList<Especialista> listaEspecialistas;
 	private Conjunto<Cliente> listaClientes;
 	private Diccionario<Long,Servicio> listasServicios;
 	
 	public EmpresaDeServicios () {
 		this.listaClientes = new Conjunto<Cliente>();
-		this.listaEspecialistas = new Conjunto <Especialista>();
+		this.listaEspecialistas = new ArrayList <Especialista>();
 		this.listasServicios = new Diccionario<Long,Servicio>();
 	}
 
@@ -22,8 +24,25 @@ public class EmpresaDeServicios implements Empresa{
 
 	@Override
 	public void registrarEspecialista(int nroEspecialista, String nombre, String telefono, String especialidad) {
-		listaEspecialistas.agregar(new Especialista(nroEspecialista,nombre,telefono,especialidad));
+		if(!existeEspecialista(nroEspecialista)) {
+			listaEspecialistas.add(new Especialista(nroEspecialista,nombre,telefono,especialidad));
+		} else
+			throw new RuntimeException ();
 		
+		
+	}
+
+	private boolean existeEspecialista(int nroEspecialista) {
+		boolean encontro= false;
+		if(!listaEspecialistas.isEmpty()) {
+			Iterator <Especialista> it = listaEspecialistas.iterator();
+			while (it.hasNext()) {
+				if(it.next().getIdEspecialista() == nroEspecialista) {
+					encontro = true;
+				}
+			}
+		}
+		return encontro;
 	}
 
 	@Override
@@ -96,5 +115,6 @@ public class EmpresaDeServicios implements Empresa{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }

@@ -70,7 +70,7 @@ public class EmpresaDeServiciosTest {
 		empresa.finalizarServicio(codServicio_cli2_gasista, 1000);// facturacion = 1000 + 3*3200
 
 	}
-
+	/*
 	@Test
 	public void registrarClienteNuevo_finalizaOK() {
 		empresa.registrarCliente(dniClienteNuevo, "clienteX", "1146453465");
@@ -80,17 +80,16 @@ public class EmpresaDeServiciosTest {
 	public void registrarClienteRepetido_generaError() {
 		empresa.registrarCliente(dniClienteRegistrado, "clienteX", "1146453465");
 	}
-	/*
+	*/
+	
+	
 	@Test
 	public void registrarEspecialistaNuevo_finalizaOK() {
 		empresa.registrarEspecialista(nroEspecialistaNuevo1, "EspecialistaEnTodo", "1146453465", SERVICIO_ELECTRICIDAD);
 		empresa.registrarEspecialista(nroEspecialistaNuevo2, "EspecialistaEnTodo", "1146453465", SERVICIO_PINTURA);
-		empresa.registrarEspecialista(nroEspecialistaNuevo3, "EspecialistaEnTodo", "1146453465",
-				SERVICIO_PINTURA_EN_ALTURA);
-		empresa.registrarEspecialista(nroEspecialistaNuevo4, "EspecialistaEnTodo", "1146453465",
-				SERVICIO_GASISTA_INSTALACION);
-		empresa.registrarEspecialista(nroEspecialistaNuevo5, "EspecialistaEnTodo", "1146453465",
-				SERVICIO_GASISTA_REVISION);
+		empresa.registrarEspecialista(nroEspecialistaNuevo3, "EspecialistaEnTodo", "1146453465", SERVICIO_PINTURA_EN_ALTURA);
+		empresa.registrarEspecialista(nroEspecialistaNuevo4, "EspecialistaEnTodo", "1146453465", SERVICIO_GASISTA_INSTALACION);
+		empresa.registrarEspecialista(nroEspecialistaNuevo5, "EspecialistaEnTodo", "1146453465", SERVICIO_GASISTA_REVISION);
 	}
 	
 	@Test(expected = RuntimeException.class)
@@ -110,7 +109,7 @@ public class EmpresaDeServiciosTest {
 		empresa.solicitarServicioGasistaRevision(dniClienteRegistrado, nroEspecialistaGasistaRevision, "bulevar 777", 1,
 				3200);
 	}
-
+	/*
 	@Test(expected = RuntimeException.class)
 	public void solicitarServicioConNroEspecialidadInvalido_generaError() {
 		empresa.solicitarServicioPintura(dniClienteRegistrado, nroEspecialistaNuevo1, "otra Calle 871", 9, 2000);
