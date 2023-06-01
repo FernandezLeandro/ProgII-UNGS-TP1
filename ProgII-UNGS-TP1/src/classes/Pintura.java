@@ -5,6 +5,7 @@ public class Pintura extends Servicio {
 	private double costePorM2;
 	private double superficieEnM2;
 	public int cantidadServiciosFinalizados;
+	private double importeFinal;
 	
 	public Pintura() {
 		
@@ -47,6 +48,16 @@ public class Pintura extends Servicio {
 
 	public double getSuperficieEnM2() {
 		return superficieEnM2;
+	}
+	
+	@Override
+	public void setImporteFinal(double costoFinal) {
+		this.importeFinal = costoFinal;
+	}
+	
+	@Override
+	public double getImporteFinal() {
+		return this.importeFinal;
 	}
 	
 	

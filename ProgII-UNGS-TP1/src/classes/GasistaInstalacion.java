@@ -4,9 +4,10 @@ public class GasistaInstalacion extends Gasista {
 
 	private double costePorInstalacion;
 	public Integer cantidadServicioFinalizados;
-	
+	private double importeFinal;
+
 	public GasistaInstalacion() {
-		
+
 	}
 
 	public GasistaInstalacion(Integer id, Especialista especialista, String domicilio, Cliente cliente,
@@ -14,7 +15,7 @@ public class GasistaInstalacion extends Gasista {
 		super(id, especialista, domicilio, cliente, cantArtefactos, precioPorArtefacto);
 		this.costePorInstalacion = precioPorArtefacto;
 	}
-	
+
 	@Override
 	public double calcularImporteTotal() {
 		return costePorInstalacion * getCantArtefactos();
@@ -23,18 +24,28 @@ public class GasistaInstalacion extends Gasista {
 	@Override
 	public void cambiarEspecialista(Especialista nuevoEspecialista) {
 		setEspecialista(nuevoEspecialista);
-		
+
 	}
-	
+
 	@Override
 	public boolean finalizado() {
 		return this.finalizado();
 	}
-	
+
 	@Override
 	public void finalizarServicio() {
-			this.setFinalizado(true);
-			incrementarCantidadServiciosFinalizados();
+		setFinalizado(true);
+		incrementarCantidadServiciosFinalizados();
 	}
 	
+	@Override
+	public void setImporteFinal(double costoFinal) {
+		this.importeFinal = costoFinal;
+	}
+	
+	@Override
+	public double getImporteFinal() {
+		return this.importeFinal;
+	}
+
 }

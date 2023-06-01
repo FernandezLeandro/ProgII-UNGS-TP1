@@ -27,8 +27,7 @@ public class Main {
 		 int cli1_elec2=empresa.solicitarServicioElectricidad(30449448, 452, "calle falsa 139", 650, 10);
 
 
-//		 System.out.println(cli1_pintor1);
-//		 System.out.println(cli2_elec2);
+
 		 // El toString de empresa debe mostrar información útil, relevante y
 		 // ordenada para que se pueda entender el estado actual del sistema.
 		 System.out.println(empresa);
