@@ -70,7 +70,7 @@ public class EmpresaDeServiciosTest {
 		empresa.finalizarServicio(codServicio_cli2_gasista, 1000);// facturacion = 1000 + 3*3200
 
 	}
-	/*
+	
 	@Test
 	public void registrarClienteNuevo_finalizaOK() {
 		empresa.registrarCliente(dniClienteNuevo, "clienteX", "1146453465");
@@ -80,7 +80,7 @@ public class EmpresaDeServiciosTest {
 	public void registrarClienteRepetido_generaError() {
 		empresa.registrarCliente(dniClienteRegistrado, "clienteX", "1146453465");
 	}
-	*/
+	
 	
 	
 	@Test
@@ -109,7 +109,7 @@ public class EmpresaDeServiciosTest {
 		empresa.solicitarServicioGasistaRevision(dniClienteRegistrado, nroEspecialistaGasistaRevision, "bulevar 777", 1,
 				3200);
 	}
-	/*
+	
 	@Test(expected = RuntimeException.class)
 	public void solicitarServicioConNroEspecialidadInvalido_generaError() {
 		empresa.solicitarServicioPintura(dniClienteRegistrado, nroEspecialistaNuevo1, "otra Calle 871", 9, 2000);
@@ -171,5 +171,5 @@ public class EmpresaDeServiciosTest {
 				+ "bulevar 333\n";
 		assertEquals(esperado, empresa.listadoServiciosAtendidosPorEspecialista(nroEspecialistaGasistaInstalacion));
 	}
-	*/
+	
 }

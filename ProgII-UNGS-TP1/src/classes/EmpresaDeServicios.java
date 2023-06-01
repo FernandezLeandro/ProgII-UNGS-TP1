@@ -31,7 +31,7 @@ public class EmpresaDeServicios implements Empresa{
 
 	@Override
 	public void registrarEspecialista(int nroEspecialista, String nombre, String telefono, String especialidad) {
-		if(!existeEspecialista(nroEspecialista)) {
+		if(!existeEspecialista(nroEspecialista) && verificarEspecialidad(especialidad)) {
 			listaEspecialistas.add(new Especialista(nroEspecialista,nombre,telefono,especialidad));
 		} else
 			throw new RuntimeException ("Especialista ya registrado");
@@ -179,7 +179,7 @@ public class EmpresaDeServicios implements Empresa{
 	public void cambiarResponsable(int codServicio, int nroEspecialista) {
 		
 		if(!existeEspecialista(nroEspecialista)) {
-			throw new RuntimeException("No se encuentra especialista N° " + nroEspecialista);
+			throw new RuntimeException("No se encuentra especialista Nï¿½ " + nroEspecialista);
 		}
 		Especialista e = buscarEspecialista(nroEspecialista);
 		buscarServicio(codServicio).setEspecialista(e);
@@ -242,9 +242,13 @@ public class EmpresaDeServicios implements Empresa{
 	
 	public Servicio buscarServicio(Integer codServicio) {
 		if(!listaServicios.containsKey((Integer)codServicio))
-			throw new RuntimeException("No se encuentra el codigo de servicio N° " + codServicio);
+			throw new RuntimeException("No se encuentra el codigo de servicio Nï¿½ " + codServicio);
 		Servicio s = listaServicios.get(codServicio);
 		return s;
+	}
+	
+	private boolean verificarEspecialidad(String especialidad) {
+		return TipoServicio.esTipoServicio(especialidad);
 	}
 	
 
