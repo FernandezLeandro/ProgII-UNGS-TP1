@@ -80,7 +80,7 @@ public class EmpresaDeServicios implements Empresa{
 		
 		listaServicios.put(contServicios, altura);
 		e.addServicioHistorial(altura);
-		altura.setTipoServicio("Altura");
+		altura.setTipoServicio("PinturaEnAltura");
 		this.contServicios++;
 		
 		return altura.getId();
@@ -182,7 +182,21 @@ public class EmpresaDeServicios implements Empresa{
 			throw new RuntimeException("No se encuentra especialista N� " + nroEspecialista);
 		}
 		Especialista e = buscarEspecialista(nroEspecialista);
-		buscarServicio(codServicio).setEspecialista(e);
+		Servicio servicio = buscarServicio(codServicio);
+		//La especialidad puede cambiar si es de algun tipo de pintura, por eso se comprueba si es en altura o no
+		if(servicio.getTipoServicio() == TipoServicio.PINTURA.getName() || servicio.getTipoServicio() == TipoServicio.PINTURA_EN_ALTURA.getName()) {
+			if(e.getEspecialidad() == TipoServicio.PINTURA.getName() || e.getEspecialidad() == TipoServicio.PINTURA_EN_ALTURA.getName()) {
+				buscarServicio(codServicio).setEspecialista(e);
+			}else
+				throw new RuntimeException();
+		} else {
+			//Se comprueba que sea del mismo tipo de especialidad, sin la validacion de arriba decia que Pintura!= PinturaEnAltura, y no es la idea ya que un pintor puede hacer ambos
+			if(servicio.getTipoServicio() != e.getEspecialidad()) {
+				throw new RuntimeException();
+			} else
+				buscarServicio(codServicio).setEspecialista(e);
+		}
+			
 		
 	}
 

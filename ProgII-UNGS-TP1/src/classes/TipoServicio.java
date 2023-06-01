@@ -22,4 +22,7 @@ public enum TipoServicio {
 	      }
 	      return false;
 	    }
+	public String getName() {
+		return this.names;
+	}
 }
