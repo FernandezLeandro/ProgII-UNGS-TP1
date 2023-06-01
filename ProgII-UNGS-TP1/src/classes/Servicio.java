@@ -2,20 +2,21 @@ package classes;
 
 public abstract class Servicio {
 
-	private Long id;
+	private Integer id;
 	private double totalFacturacion;
 	private Especialista especialista;
 	private String domicilio;
 	private Cliente cliente;
 	private Boolean finalizado;
 	private int cantidadServiciosFinalizados = 0;
+	private String tipoServicio;
 	
 	public Servicio() {
 		
 	}
 	
 	
-	public Servicio(Long id, Especialista especialista, String domicilio, Cliente cliente) {
+	public Servicio(Integer id, Especialista especialista, String domicilio, Cliente cliente) {
 		super();
 		this.id = id;
 		this.especialista = especialista;
@@ -49,4 +50,23 @@ public abstract class Servicio {
 		this.especialista = especialista;
 	}
 	
+	public Integer getId() {
+		return this.id;
+	}
+	
+	public Especialista getEspecialista() {
+		return this.especialista;
+	}
+	
+	public String getDireccion() {
+		return this.domicilio;
+	}
+	
+	public String getTipoServicio(){
+		return this.tipoServicio;
+	}
+	
+	public void setTipoServicio(String tipo) {
+		this.tipoServicio = tipo;
+	}
 }

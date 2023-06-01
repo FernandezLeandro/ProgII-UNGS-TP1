@@ -11,8 +11,8 @@ public class Electricidad extends Servicio {
 		
 	}
 	
-	public Electricidad(Long id, Especialista especialista, String domicilio, Cliente cliente, double valorPorHora,
-			int cantidadHoras, int cantidadServiciosFinalizados) {
+	public Electricidad(Integer id, Especialista especialista, String domicilio, Cliente cliente, double valorPorHora,
+			int cantidadHoras) {
 		super(id, especialista, domicilio, cliente);
 		this.valorPorHora = valorPorHora;
 		this.cantidadHoras = cantidadHoras;
@@ -38,10 +38,8 @@ public class Electricidad extends Servicio {
 
 	@Override
 	public void finalizarServicio() {
-		if(!this.isFinalizado()) {
 			this.setFinalizado(true);
 			incrementarCantidadServiciosFinalizados();
-		}
 	}
 	
 }

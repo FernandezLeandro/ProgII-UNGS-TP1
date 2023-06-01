@@ -10,12 +10,11 @@ public class Pintura extends Servicio {
 		
 	}
 	
-	public Pintura(Long id, Especialista especialista, String domicilio, Cliente cliente, double costePorM2,
-			double superficieEnM2, int cantidadServiciosFinalizados) {
+	public Pintura(Integer id, Especialista especialista, String domicilio, Cliente cliente, double costePorM2,
+			double superficieEnM2) {
 		super(id, especialista, domicilio, cliente);
 		this.costePorM2 = costePorM2;
 		this.superficieEnM2 = superficieEnM2;
-		this.cantidadServiciosFinalizados = cantidadServiciosFinalizados;
 	}
 
 	@Override

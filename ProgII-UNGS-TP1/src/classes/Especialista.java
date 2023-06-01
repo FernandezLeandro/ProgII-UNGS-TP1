@@ -19,10 +19,11 @@ public class Especialista {
 		this.nombre = nombre;
 		this.telefono = telefono;
 		this.especialidad = especialidad;
+		this.historialServiciosRealizados = new ArrayList<>();
 	}
 
 	public ArrayList<Servicio> getHistorialServiciosRealizados() {
-		return historialServiciosRealizados;
+		return this.historialServiciosRealizados;
 	}
 
 	public void addServicioHistorial(Servicio servicio) {
@@ -61,9 +62,6 @@ public class Especialista {
 		this.especialidad = especialidad;
 	}
 
-	public void setHistorialServiciosRealizados(ArrayList<Servicio> historialServiciosRealizados) {
-		this.historialServiciosRealizados = historialServiciosRealizados;
-	}
 	
 	
 	

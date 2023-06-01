@@ -2,40 +2,26 @@ package classes;
 
 public class Gasista extends Servicio {
 
-	private double costePorInstalacion;
-	private double costePorRevision;
-	private double descuentoPorRevisionMas5;
-	private double descuentoPorRevisionMas10;
 	private String tipoServicio;
-	private Integer cantidadArtefactosRevisar;
-	private Integer cantidadArtefactosInstalar;
+	private Integer cantidadArtefactos;
 	public Integer cantidadServicioFinalizados;
 	
 	public Gasista() {
 		
 	}
 	
-	public Gasista(Long id, Especialista especialista, String domicilio, Cliente cliente, double costePorInstalacion,
-			double costePorRevision, double descuentoPorRevisionMas5, double descuentoPorRevisionMas10,
-			String tipoServicio, Integer cantidadServicioFinalizados, Integer cantidadArtefactosRevisar, Integer cantidadArtefactosInstalar) {
+	public Gasista(Integer id, Especialista especialista, String domicilio, Cliente cliente, int cantArtefactos, 
+			double precioPorArtefacto) {
 		super(id, especialista, domicilio, cliente);
-		this.costePorInstalacion = costePorInstalacion;
-		this.costePorRevision = costePorRevision;
-		this.descuentoPorRevisionMas5 = descuentoPorRevisionMas5;
-		this.descuentoPorRevisionMas10 = descuentoPorRevisionMas10;
+		
 		this.tipoServicio = tipoServicio;
-		this.cantidadServicioFinalizados = cantidadServicioFinalizados;
-		this.cantidadArtefactosRevisar = cantidadArtefactosRevisar;
-		this.cantidadArtefactosInstalar = cantidadArtefactosInstalar;
+		this.cantidadArtefactos = cantArtefactos;
+
 	}
-	
-//	public double calcularImporteTotal(Integer cantidadArtefactos) {
-//		return 0;
-//	}
 
 	@Override
 	public double calcularImporteTotal() {
-		return ((cantidadArtefactosInstalar * costePorInstalacion) + (cantidadArtefactosRevisar * costePorRevision - ((cantidadArtefactosRevisar > 5) ? costePorRevision * 0.1 * cantidadArtefactosRevisar : 0 )) - ((cantidadArtefactosRevisar > 10) ? costePorRevision * 0.15 * cantidadArtefactosRevisar : 0));
+		return 0;
 	}
 
 	@Override
@@ -55,6 +41,10 @@ public class Gasista extends Servicio {
 			this.setFinalizado(true);
 			incrementarCantidadServiciosFinalizados();
 		}
+	}
+	
+	public double getCantArtefactos() {
+		return this.cantidadArtefactos;
 	}
 
 	
