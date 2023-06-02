@@ -7,7 +7,6 @@ public class Cliente {
 	private int dni;
 	private String nombre;
 	private String numeroContacto;
-	private ArrayList<Servicio> listaServiciosPendientes;
 	
 	public Cliente() {
 		
@@ -17,18 +16,6 @@ public class Cliente {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.numeroContacto = numeroContacto;
-	}
-	
-	public void addServicioPendiente(Servicio servicio) {
-		if(!servicio.finalizado()) {
-			listaServiciosPendientes.add(servicio);
-		}
-	}
-	
-	public void removeServicioPendiente(Servicio servicio) {
-		if(servicio.finalizado()) {
-			listaServiciosPendientes.remove(servicio);
-		}
 	}
 	
 	@Override

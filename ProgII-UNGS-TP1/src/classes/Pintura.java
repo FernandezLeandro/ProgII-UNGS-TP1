@@ -36,10 +36,8 @@ public class Pintura extends Servicio {
 
 	@Override
 	public void finalizarServicio() {
-		if(!this.isFinalizado()) {
 			this.setFinalizado(true);
 			incrementarCantidadServiciosFinalizados();
-		}
 	}
 
 	public double getCostePorM2() {

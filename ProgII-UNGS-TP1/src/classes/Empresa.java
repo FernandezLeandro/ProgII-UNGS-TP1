@@ -4,11 +4,6 @@ import java.util.Map;
 
 public interface Empresa {
 	
-//	public Conjunto<Especialista> listaEspecialistas;
-//	public Conjunto<Cliente> listaClientes;
-//	public Diccionario<Long,Servicio> listasServicios;
-	
-	
 	/**
 	* Registra un nuevo cliente en el sistema dado su:
 	* - dni,

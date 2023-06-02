@@ -37,10 +37,8 @@ public class GasistaRevision extends Gasista {
 	
 	@Override
 	public void finalizarServicio() {
-		if(!this.isFinalizado()) {
 			this.setFinalizado(true);
 			incrementarCantidadServiciosFinalizados();
-		}
 	}
 
 	

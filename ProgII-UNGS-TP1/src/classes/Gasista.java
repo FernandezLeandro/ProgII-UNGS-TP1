@@ -2,7 +2,6 @@ package classes;
 
 public class Gasista extends Servicio {
 
-	private String tipoServicio;
 	private Integer cantidadArtefactos;
 	public Integer cantidadServicioFinalizados;
 	private double importeFinal;

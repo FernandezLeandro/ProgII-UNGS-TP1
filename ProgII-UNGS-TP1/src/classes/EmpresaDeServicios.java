@@ -340,7 +340,7 @@ public class EmpresaDeServicios implements Empresa {
 
 	public String toString() {
 		StringBuilder build = new StringBuilder();
-		build.append("Empresa de Servicios |");
+		build.append("El Tano Construcciones|");
 		build.append("TotalFacturacion = ");
 		build.append(facturacionTotal());
 		build.append(" | ");
