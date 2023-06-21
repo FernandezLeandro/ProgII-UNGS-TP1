@@ -29,7 +29,9 @@ public abstract class Servicio {
 		cantidadServiciosFinalizados++;
 	}
 
-	public abstract void cambiarEspecialista(Especialista nuevoEspecialista);
+	public void cambiarEspecialista(Especialista nuevoEspecialista) {
+		setEspecialista(nuevoEspecialista);
+	}
 
 	public abstract boolean finalizado();
 

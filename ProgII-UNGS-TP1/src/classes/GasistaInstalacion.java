@@ -22,12 +22,6 @@ public class GasistaInstalacion extends Gasista {
 	}
 
 	@Override
-	public void cambiarEspecialista(Especialista nuevoEspecialista) {
-		setEspecialista(nuevoEspecialista);
-
-	}
-
-	@Override
 	public boolean finalizado() {
 		return this.finalizado();
 	}

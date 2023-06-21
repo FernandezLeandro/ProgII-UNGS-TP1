@@ -28,12 +28,6 @@ public class PinturaEnAltura extends Pintura {
 	}
 
 	@Override
-	public void cambiarEspecialista(Especialista nuevoEspecialista) {
-		this.setEspecialista(nuevoEspecialista);
-		
-	}
-
-	@Override
 	public boolean finalizado() {
 		return this.finalizado();
 	}

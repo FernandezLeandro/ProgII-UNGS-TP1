@@ -23,12 +23,6 @@ public class GasistaRevision extends Gasista {
 				getCantArtefactos() * (descuentoPorRevisionMas5 / 100) : 0) - 
 				((10 < getCantArtefactos()) ? getCantArtefactos() * (descuentoPorRevisionMas10 / 100) : 0);
 	}
-
-	@Override
-	public void cambiarEspecialista(Especialista nuevoEspecialista) {
-		setEspecialista(nuevoEspecialista);
-		
-	}
 	
 	@Override
 	public boolean finalizado() {
